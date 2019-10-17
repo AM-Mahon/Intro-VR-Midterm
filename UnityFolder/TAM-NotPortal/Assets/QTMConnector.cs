@@ -26,9 +26,10 @@ public class QTMConnector : MonoBehaviour
                 server = discoveryResponse;
                 foundServer = true;
             }
-            else{
-                Debug.Log("Desired Host not found");
-            }
+            Debug.Log(discoveryResponse.IpAddress);
+            // else{
+            //     Debug.Log("Desired Host not found");
+            // }
         }
 
         // If a server is found at the correct host, connect to the server
