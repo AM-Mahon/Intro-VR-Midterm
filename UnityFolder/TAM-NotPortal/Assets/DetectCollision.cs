@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    bool collided;
+    // Useful: https://docs.unity3d.com/Manual/CollidersOverview.html
+    int collided;
     // Start is called before the first frame update
     MeshRenderer render;
     void Start()
     {
         render = this.GetComponent<MeshRenderer>();
         render.material.color = Color.red;
+        collided = 0;
     }
 
     // Update is called once per frame
@@ -20,17 +22,24 @@ public class DetectCollision : MonoBehaviour
     }
 
     public bool get_collided(){
-        return collided;
+        return collided>0;
     }
 
     void OnTriggerEnter(Collider other){
         //MeshRender 
-        render.material.color = Color.green;
-        collided = true;
+        if(other.gameObject.tag == "box"){
+            render.material.color = Color.green;
+            collided++;
+        }
     }
 
     void OnTriggerExit(Collider other){
-        render.material.color = Color.red;
-        collided = false;
+        if(other.gameObject.tag == "box"){
+            collided--;
+            if(collided = 0){
+                render.material.color = Color.red;
+            }
+        }
+        
     }
 }
