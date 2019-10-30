@@ -16,7 +16,7 @@ public class Grabber : MonoBehaviour
     void Update(){
         if(Input.GetButtonDown("Fire1")){
             if(grabbedGameObject != null){
-                grabbedGameObject.transform.parent = transform;
+                grabbedGameObject.transform.parent = transform.parent;
                 grabbedGameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
             //buttonHeld = true;

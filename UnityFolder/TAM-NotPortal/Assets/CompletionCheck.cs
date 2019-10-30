@@ -5,15 +5,16 @@ using UnityEngine;
 //<include file='DetectCollision.cs'/>
 public class CompletionCheck : MonoBehaviour
 {
-    // GameObject other;
-    // Component other1;
+    
+    AudioSource audioSource;
     public DetectCollision toCheck;
     public DetectCollision toCheck2;
-    // toCheck.GetComponent<DetectCollision>().get_collided();
+    
     MeshRenderer render;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource> ();
         render = this.GetComponent<MeshRenderer>();
         render.material.color = Color.red;
     }
@@ -23,6 +24,7 @@ public class CompletionCheck : MonoBehaviour
     {
         if(toCheck.get_collided() && toCheck2.get_collided()){
             render.material.color = Color.green;
+        audioSource.Play ();
         }
         else{
             render.material.color = Color.red;
