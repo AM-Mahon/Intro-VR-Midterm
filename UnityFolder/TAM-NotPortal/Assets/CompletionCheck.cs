@@ -5,7 +5,7 @@ using UnityEngine;
 //<include file='DetectCollision.cs'/>
 public class CompletionCheck : MonoBehaviour
 {
-    
+    private bool passed = false;   
     AudioSource audioSource;
     public DetectCollision toCheck;
     public DetectCollision toCheck2;
@@ -24,7 +24,11 @@ public class CompletionCheck : MonoBehaviour
     {
         if(toCheck.get_collided() && toCheck2.get_collided()){
             render.material.color = Color.green;
-        audioSource.Play ();
+            if(!passed){
+                audioSource.Play ();
+                passed = true;
+            }
+        
         }
         else{
             render.material.color = Color.red;
