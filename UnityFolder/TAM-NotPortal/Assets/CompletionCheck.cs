@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//#include "DetectCollision.cs"
-//<include file='DetectCollision.cs'/>
 public class CompletionCheck : MonoBehaviour
 {
     private bool passed = false;   
