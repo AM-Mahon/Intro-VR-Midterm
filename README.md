@@ -1,7 +1,9 @@
 # Intro-VR-Midterm
 Midterm project for CSCI 4519
 
-Portal-Like Puzzle game in VR, but with no portals
+Room Scale puzzle game focusing on objects. Players will need to place boxes or balls on large buttons in order to proceed to the next level.
+The 1st level requires players to find the location of the buttons and then find the appropriate box that would activate the button.
+The 2nd level requires players to find the location of the balls and then place them in the correct paths that lead to the correct buttons, of which there are 3, 2 real and a fake button.
 
 
 
